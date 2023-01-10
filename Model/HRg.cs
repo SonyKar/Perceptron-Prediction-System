@@ -2,17 +2,17 @@
 {
 	public class HRg
 	{
-		public Queue<int> hr { get; } = new Queue<int>();
+		public Queue<bool> hr { get; } = new Queue<bool>();
 
 		public HRg(int maxSize = 8)
 		{
 			for (int i = 0; i < maxSize; i++) 
 			{
-				hr.Enqueue(-1);
+				hr.Enqueue(false);
 			}
 		}
 
-		public void AddValue(int addValue)
+		public void AddValue(bool addValue)
 		{
 			hr.Dequeue();
 			hr.Enqueue(addValue);

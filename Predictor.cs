@@ -6,11 +6,13 @@ namespace PerceptronPredictionSystem
     {
         private readonly Perceptron[] perceptrons;
         private readonly HRg hrg;
+        private readonly Data[] data;
 
-		public Predictor(int perceptronNumber, int hrgSize)
+		public Predictor(int perceptronNumber, int hrgSize, Data[] data)
         {
             perceptrons = new Perceptron[perceptronNumber];
             hrg = new HRg(hrgSize);
+            this.data = data;
 
             for(int i = 0; i < perceptrons.Length; i++)
             {
@@ -20,15 +22,17 @@ namespace PerceptronPredictionSystem
 
         public void Train()
         {
-            // while(file)
-            int index = 1; // PC % perceptrons.Length;
-
-			int predictedValue = perceptrons[index].Calculate(hrg);
-            if (predictedValue != 1) // not equal real value
+            foreach (Data dataPiece in data)
             {
-				perceptrons[index].AdjustWeights(1); // real value
+				int index = dataPiece.PC % perceptrons.Length;
+
+				bool predictedValue = perceptrons[index].Calculate(hrg);
+				if (predictedValue != dataPiece.isTaken) // not equal real value
+				{
+					perceptrons[index].AdjustWeights(dataPiece.isTaken); // real value
+				}
+				hrg.AddValue(dataPiece.isTaken);
 			}
-            // hrg.AddValue(realValue);
-        }
+		}
     }
 }
