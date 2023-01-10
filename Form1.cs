@@ -15,10 +15,10 @@ namespace PerceptronPredictionSystem
 		{
 			if (data != null)
 			{
-				//Predictor predictor = new Predictor(Int32.Parse(nrPerceptronTextBox.Text),
-				//								Int32.Parse(nrHrBitsTextBox.Text),
-				//								data);
-				//predictor.Train();
+				Predictor predictor = new Predictor(Int32.Parse(nrPerceptronTextBox.Text),
+												Int32.Parse(nrHrBitsTextBox.Text),
+												data);
+				predictor.Train();
 			}
 			else
 			{
