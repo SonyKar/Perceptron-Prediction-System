@@ -30,13 +30,13 @@
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.chooseFileButton = new System.Windows.Forms.Button();
+			this.label8 = new System.Windows.Forms.Label();
+			this.nrHrBitsTextBox = new System.Windows.Forms.TextBox();
 			this.startButton = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.nrPerceptronTextBox = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -82,13 +82,13 @@
 			this.tableLayoutPanel2.ColumnCount = 2;
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 3);
+			this.tableLayoutPanel2.Controls.Add(this.chooseFileButton, 1, 3);
+			this.tableLayoutPanel2.Controls.Add(this.label8, 0, 3);
+			this.tableLayoutPanel2.Controls.Add(this.nrHrBitsTextBox, 1, 2);
 			this.tableLayoutPanel2.Controls.Add(this.startButton, 0, 4);
 			this.tableLayoutPanel2.Controls.Add(this.label7, 0, 0);
-			this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 2);
-			this.tableLayoutPanel2.Controls.Add(this.label5, 0, 3);
+			this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
 			this.tableLayoutPanel2.Controls.Add(this.nrPerceptronTextBox, 1, 1);
-			this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
 			this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -101,22 +101,55 @@
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(318, 547);
 			this.tableLayoutPanel2.TabIndex = 0;
 			// 
-			// textBox2
+			// chooseFileButton
 			// 
-			this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-			this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.textBox2.ForeColor = System.Drawing.Color.White;
-			this.textBox2.Location = new System.Drawing.Point(154, 205);
-			this.textBox2.Margin = new System.Windows.Forms.Padding(0, 15, 0, 6);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(144, 30);
-			this.textBox2.TabIndex = 3;
-			this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.chooseFileButton.AutoSize = true;
+			this.chooseFileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.chooseFileButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.chooseFileButton.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.chooseFileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.chooseFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.chooseFileButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.chooseFileButton.ForeColor = System.Drawing.Color.White;
+			this.chooseFileButton.Location = new System.Drawing.Point(154, 205);
+			this.chooseFileButton.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
+			this.chooseFileButton.Name = "chooseFileButton";
+			this.chooseFileButton.Size = new System.Drawing.Size(144, 30);
+			this.chooseFileButton.TabIndex = 4;
+			this.chooseFileButton.Text = "Choose file";
+			this.chooseFileButton.UseVisualStyleBackColor = false;
+			this.chooseFileButton.Click += new System.EventHandler(this.chooseFileButton_Click);
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.label8.ForeColor = System.Drawing.Color.White;
+			this.label8.Location = new System.Drawing.Point(13, 190);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(138, 60);
+			this.label8.TabIndex = 7;
+			this.label8.Text = "Benchmark";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// nrHrBitsTextBox
+			// 
+			this.nrHrBitsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.nrHrBitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.nrHrBitsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.nrHrBitsTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.nrHrBitsTextBox.ForeColor = System.Drawing.Color.White;
+			this.nrHrBitsTextBox.Location = new System.Drawing.Point(154, 145);
+			this.nrHrBitsTextBox.Margin = new System.Windows.Forms.Padding(0, 15, 0, 6);
+			this.nrHrBitsTextBox.Name = "nrHrBitsTextBox";
+			this.nrHrBitsTextBox.Size = new System.Drawing.Size(144, 30);
+			this.nrHrBitsTextBox.TabIndex = 3;
+			this.nrHrBitsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// startButton
 			// 
@@ -124,6 +157,7 @@
 			this.tableLayoutPanel2.SetColumnSpan(this.startButton, 2);
 			this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.startButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.startButton.Enabled = false;
 			this.startButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
 			this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.startButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -132,9 +166,10 @@
 			this.startButton.Margin = new System.Windows.Forms.Padding(3, 26, 3, 3);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(282, 41);
-			this.startButton.TabIndex = 4;
+			this.startButton.TabIndex = 5;
 			this.startButton.Text = "Start";
 			this.startButton.UseVisualStyleBackColor = false;
+			this.startButton.Click += new System.EventHandler(this.startButton_Click);
 			// 
 			// label7
 			// 
@@ -150,31 +185,17 @@
 			this.label7.Text = "Perceptron";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// textBox1
-			// 
-			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.textBox1.ForeColor = System.Drawing.Color.White;
-			this.textBox1.Location = new System.Drawing.Point(154, 145);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(0, 15, 0, 6);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(144, 30);
-			this.textBox1.TabIndex = 2;
-			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.label5.ForeColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(13, 190);
+			this.label5.Location = new System.Drawing.Point(13, 130);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(138, 60);
 			this.label5.TabIndex = 4;
-			this.label5.Text = "Benchmark";
+			this.label5.Text = "Nr Bits HR";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// nrPerceptronTextBox
@@ -190,19 +211,6 @@
 			this.nrPerceptronTextBox.Size = new System.Drawing.Size(144, 30);
 			this.nrPerceptronTextBox.TabIndex = 1;
 			this.nrPerceptronTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(13, 130);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(138, 60);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Nr Bits HR";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label1
 			// 
@@ -446,9 +454,7 @@
 		private Label label1;
 		private Label label5;
 		private TextBox nrPerceptronTextBox;
-		private Label label3;
-		private TextBox textBox2;
-		private TextBox textBox1;
+		private TextBox nrHrBitsTextBox;
 		private Button startButton;
 		private TableLayoutPanel tableLayoutPanel3;
 		private Label filenameLabel;
@@ -465,5 +471,7 @@
 		private Label accuracyLabel;
 		private Label accuracyTakenLabel;
 		private Label label7;
+		private Label label8;
+		private Button chooseFileButton;
 	}
 }
