@@ -17,38 +17,30 @@
 			}
 		}
 
-		private int ActivationFunction(double value)
+		private bool ActivationFunction(double value)
 		{
-			if (value > 0) return 1;
-			else return -1;
+			return value >= 0;
 		}
 
-		public int Calculate(HRg hrg)
+		public bool Calculate(HRg hrg)
 		{
 			double sum = 0;
-			for(int i = 0; i < hrg.hr.Count; i++)
+			int i = 0;
+			foreach (bool realValue in hrg.hr)
 			{
-				if (i == 1) sum += wt[i];
-				else sum += wnt[i];
+				sum += realValue ? wt[i++] : wnt[i++];
 			}
 
 			return ActivationFunction(sum);
 		}
 
-		public void AdjustWeights(int realValue)
+		public void AdjustWeights(bool realValue)
 		{
+			int delta = realValue ? 1 : -1;
 			for(int i = 0; i < wnt.Length; i++)
 			{
-				if (realValue == 1)
-				{
-					wnt[i]++;
-					wt[i]++;
-				}
-				else if (realValue == -1)
-				{
-					wnt[i]--;
-					wt[i]--;
-				}
+				wnt[i] += delta;
+				wt[i] += delta;
 			}
 		}
 	}

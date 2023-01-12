@@ -43,7 +43,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.notTakenTotalLabel = new System.Windows.Forms.Label();
 			this.notTakenPredictedLabel = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.totalJumpsLabel = new System.Windows.Forms.Label();
 			this.filenameLabel = new System.Windows.Forms.Label();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
 			this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
 			this.accuracyLabel = new System.Windows.Forms.Label();
 			this.accuracyTakenLabel = new System.Windows.Forms.Label();
+			this.accuracyNotTakenLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
@@ -149,6 +150,7 @@
 			this.nrHrBitsTextBox.Name = "nrHrBitsTextBox";
 			this.nrHrBitsTextBox.Size = new System.Drawing.Size(144, 30);
 			this.nrHrBitsTextBox.TabIndex = 3;
+			this.nrHrBitsTextBox.Text = "8";
 			this.nrHrBitsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// startButton
@@ -210,6 +212,7 @@
 			this.nrPerceptronTextBox.Name = "nrPerceptronTextBox";
 			this.nrPerceptronTextBox.Size = new System.Drawing.Size(144, 30);
 			this.nrPerceptronTextBox.TabIndex = 1;
+			this.nrPerceptronTextBox.Text = "4";
 			this.nrPerceptronTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label1
@@ -231,7 +234,7 @@
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 1, 2);
-			this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+			this.tableLayoutPanel3.Controls.Add(this.totalJumpsLabel, 0, 1);
 			this.tableLayoutPanel3.Controls.Add(this.filenameLabel, 0, 0);
 			this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 2);
 			this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 0, 3);
@@ -301,19 +304,19 @@
 			this.notTakenPredictedLabel.Text = "Not-Taken predicted: x";
 			this.notTakenPredictedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label2
+			// totalJumpsLabel
 			// 
-			this.label2.AutoSize = true;
-			this.tableLayoutPanel3.SetColumnSpan(this.label2, 2);
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(13, 40);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(736, 40);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Total jumps: x";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.totalJumpsLabel.AutoSize = true;
+			this.tableLayoutPanel3.SetColumnSpan(this.totalJumpsLabel, 2);
+			this.totalJumpsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.totalJumpsLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.totalJumpsLabel.ForeColor = System.Drawing.Color.White;
+			this.totalJumpsLabel.Location = new System.Drawing.Point(13, 40);
+			this.totalJumpsLabel.Name = "totalJumpsLabel";
+			this.totalJumpsLabel.Size = new System.Drawing.Size(736, 40);
+			this.totalJumpsLabel.TabIndex = 2;
+			this.totalJumpsLabel.Text = "Total jumps: x";
+			this.totalJumpsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// filenameLabel
 			// 
@@ -388,6 +391,7 @@
 			this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel3, 2);
 			this.flowLayoutPanel3.Controls.Add(this.accuracyLabel);
 			this.flowLayoutPanel3.Controls.Add(this.accuracyTakenLabel);
+			this.flowLayoutPanel3.Controls.Add(this.accuracyNotTakenLabel);
 			this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel3.Location = new System.Drawing.Point(13, 283);
@@ -404,7 +408,7 @@
 			this.accuracyLabel.Location = new System.Drawing.Point(3, 15);
 			this.accuracyLabel.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
 			this.accuracyLabel.Name = "accuracyLabel";
-			this.accuracyLabel.Size = new System.Drawing.Size(165, 23);
+			this.accuracyLabel.Size = new System.Drawing.Size(198, 23);
 			this.accuracyLabel.TabIndex = 4;
 			this.accuracyLabel.Text = "Accuracy: x%";
 			this.accuracyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -418,10 +422,24 @@
 			this.accuracyTakenLabel.Location = new System.Drawing.Point(3, 53);
 			this.accuracyTakenLabel.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
 			this.accuracyTakenLabel.Name = "accuracyTakenLabel";
-			this.accuracyTakenLabel.Size = new System.Drawing.Size(165, 23);
+			this.accuracyTakenLabel.Size = new System.Drawing.Size(198, 23);
 			this.accuracyTakenLabel.TabIndex = 5;
 			this.accuracyTakenLabel.Text = "Accuracy taken: x%";
 			this.accuracyTakenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// accuracyNotTakenLabel
+			// 
+			this.accuracyNotTakenLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.accuracyNotTakenLabel.AutoSize = true;
+			this.accuracyNotTakenLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.accuracyNotTakenLabel.ForeColor = System.Drawing.Color.White;
+			this.accuracyNotTakenLabel.Location = new System.Drawing.Point(3, 91);
+			this.accuracyNotTakenLabel.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
+			this.accuracyNotTakenLabel.Name = "accuracyNotTakenLabel";
+			this.accuracyNotTakenLabel.Size = new System.Drawing.Size(198, 23);
+			this.accuracyNotTakenLabel.TabIndex = 6;
+			this.accuracyNotTakenLabel.Text = "Accuracy not-taken: x%";
+			this.accuracyNotTakenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// Form
 			// 
@@ -458,7 +476,7 @@
 		private Button startButton;
 		private TableLayoutPanel tableLayoutPanel3;
 		private Label filenameLabel;
-		private Label label2;
+		private Label totalJumpsLabel;
 		private FlowLayoutPanel flowLayoutPanel2;
 		private Label label6;
 		private Label notTakenTotalLabel;
@@ -473,5 +491,6 @@
 		private Label label7;
 		private Label label8;
 		private Button chooseFileButton;
+		private Label accuracyNotTakenLabel;
 	}
 }
